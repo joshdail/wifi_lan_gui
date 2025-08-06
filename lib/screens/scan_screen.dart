@@ -56,7 +56,8 @@ class _ScanScreenState extends State<ScanScreen> {
             const SizedBox(height: UIConstants.height),
             if (_error != null)
               SelectableText(_error!, style: UIConstants.errorTextStyle),
-            SelectableText('Devices found: $_deviceCount'),
+            if (_deviceCount > 0)
+              SelectableText('Devices found: $_deviceCount'),
             const SizedBox(height: UIConstants.height),
             Expanded(
               child: ListView.builder(
